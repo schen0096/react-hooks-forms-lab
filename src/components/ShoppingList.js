@@ -31,7 +31,7 @@ function ShoppingList({ setItems, items }) {
     } 
   })
 
-  function handleFormSubmit(newItem){
+  function onItemFormSubmit(newItem){
     setItems([...items, newItem])
   }
 
@@ -43,7 +43,7 @@ function ShoppingList({ setItems, items }) {
 
   return (
     <div className="ShoppingList">
-      <ItemForm handleFormSubmit={handleFormSubmit} />
+      <ItemForm onItemFormSubmit={onItemFormSubmit} />
       <Filter search={search} onCategoryChange={handleCategoryChange} onSearchChange={handleSearchChange}/>
       <ul className="Items">
         { search.length > 0 ? handleSearchedItems : originalDisplay}
